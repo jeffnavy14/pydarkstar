@@ -15,13 +15,13 @@ backup: true
 
 # sql
 hostname: 127.0.0.1
-database: dspdb
+database: tpzdb
 username: root
-password: ????
+password: 5y5t3m
 fail: true
 
 # broker
-restock: 3600
+restock: 1000
 tick: 30
 
 # scrub
