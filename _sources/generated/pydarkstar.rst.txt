@@ -9,22 +9,23 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
-    pydarkstar.auction
-    pydarkstar.options
-    pydarkstar.scrubbing
-    pydarkstar.tables
+   pydarkstar.auction
+   pydarkstar.options
+   pydarkstar.scrubbing
+   pydarkstar.tables
 
 Submodules
 ----------
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 4
 
-    pydarkstar.common
-    pydarkstar.darkobject
-    pydarkstar.database
-    pydarkstar.item
-    pydarkstar.itemlist
-    pydarkstar.logutils
-    pydarkstar.timeutils
+   pydarkstar.common
+   pydarkstar.darkobject
+   pydarkstar.database
+   pydarkstar.item
+   pydarkstar.itemlist
+   pydarkstar.logutils
+   pydarkstar.timeutils

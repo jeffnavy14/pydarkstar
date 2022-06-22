@@ -9,6 +9,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    pydarkstar.auction.browser
    pydarkstar.auction.buyer
