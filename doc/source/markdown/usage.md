@@ -7,19 +7,30 @@
 
 > cd /D "C:\path\to\pydarkstar\bin"
 > conda activate pydarkstar
+> .\refill.py
 > .\broker.py
 
 # Linux
 
 bash:~$ cd /path/to/pydarkstar/bin
 bash:~$ conda activate pydarkstar
+bash:~$ ./refill.py
 bash:~$ ./broker.py
+```
+
+```{warning}
+The `broker` will wait until the 1st cycle defined in your config before populating items.
+```
+
+```{important}
+Run the `refill` app to populate the AH if you want to buy items immediately!
 ```
 
 #### Parameters
 
+* You should set your mysql parameters!
 * Parameters can be set in the config.yaml file
-* You should set your mysql parameters
+* You can also override parameters on the command line
 * Please do not edit source code files to configure your apps
 
 ###### Example
@@ -54,6 +65,8 @@ restock: 3600         # seconds between selling
 tick: 30              # seconds between buying
 
 # scrub
+server: bahamut       # FFXI server to query
+threads: -1           # number of CPU threads
 itemids: []           # list of itemids to scrub
 stock01: 5            # default stock01 when scrubbing
 stock12: 5            # default stock12 when scrubbing
@@ -62,31 +75,17 @@ urls: []              # list of category urls to scrub
 
 #### Item Database
 
-* Item data is stored in *items.csv*
-* *items.csv* is just a simple text file that you can edit with excel
-* The *items.csv* can be created with the scrub app
-* There is an already generated *items.csv* in the bin folder for you
-* You do not need to run the *scrub* app unless you want to recreate the database
-* You can change many properties be editing the *items.csv.* manually
-
-| column   | description                     | value             |
-| ---------|---------------------------------|-------------------|
-| itemid   | unique item id                  | integer >=0       |
-| name     | item name                       | string            |
-| sell01   | sell single?                    | 0=false 1=true    |
-| buy01    | buy single?                     | 0=false 1=true    |
-| price01  | price for single                | integer >=1       |
-| stock01  | restock count (single)          | integer >=0       |
-| rate01   | buy rate (single) **not used**  | float 0 <= x <= 1 |
-| sell12   | sell stack?                     | 0=false 1=true    |
-| buy12    | buy stack?                      | 0=false 1=true    |
-| price12  | price for stack                 | integer >=1       |
-| stock12  | restock count (stack)           | integer >=0       |
-| rate12   | buy rate (stack) **not used**   | float 0 <= x <= 1 |
+Item data is stored in a **CSV** file called *items.csv*.
+Please see the [scrubbing](./scrubbing.md) guide info on generating this **CSV**.
 
 #### Apps
 
+```{warning}
+There is no need to run the scrub app as an `items.csv` is included already!
+```
+
 * There are many apps
+* You may use the scrub app
 * You will probably only use the broker app
 
 | app    | description                                                         |

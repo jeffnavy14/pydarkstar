@@ -15,16 +15,18 @@ backup: true
 
 # sql
 hostname: 127.0.0.1
-database: tpzdb
+database: xidb
 username: root
-password: 5y5t3m
+password: ????
 fail: true
 
 # broker
-restock: 1000
+restock: 3600
 tick: 30
 
 # scrub
+server: bahamut
+threads: -1
 itemids: []
 stock01: 5
 stock12: 5
